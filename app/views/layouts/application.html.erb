@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="one click fund rasising online amazon shopping">
 	
+    <%= stylesheet_link_tag    "application", media: "all" %>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+	
+	<!--
     <link href="/assets/bootstrap.css" rel="stylesheet">
 	<link href="/assets/bootstrap-responsive.min.css" rel="stylesheet">
 	<link href="/assets/glyphicons.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link href="/assets/base.css" rel="stylesheet">
 	<link href="/assets/blue.css" rel="stylesheet">
-	
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	-->
 	
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/apple-touch-icon-114-precomposed.png">
@@ -37,7 +40,7 @@
           <a class="brand" href="index.html">AFG</a>
 		  <div class="nav-collapse collapse">
             <ul class="nav pull-right animated">
-			  <li><a href="blog.html">Blog</a></li>
+			  <li><%= link_to "Blog",    root_path %></a></li>
 			  <li><a href="register.html">Register</a></li>
 			  <li><a href="login.html">Login</a></li>
             </ul>
@@ -54,8 +57,8 @@
 		  <div class="span3">		
 			<h3>Company</h3>
 			<ul class="animated">
-			  <li><a href="about.html">About Us</a></li>
-			  <li><a href="contact.html">Contact</a></li>
+			  <li><%= link_to "About Us", about_path %></li>
+			  <li><%= link_to "Contact", contact_path %></a></li>
 			  <li><a href="#">Jobs</a></li>
 			  <li><a href="#">Press</a></li>
 			</ul>	
