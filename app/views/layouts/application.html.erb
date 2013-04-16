@@ -30,9 +30,12 @@
   <body>
 	
 	<%= render 'layouts/header' %>
-
-   <%= yield %>
 	
+    <%= render 'layouts/messages' %>
+
+    <%= yield %>
+	
+	<% if not yield(:title) == 'Sign In' and not yield(:title) == 'Register' and not yield(:title) == 'Forgot Password' and not yield(:title) == 'Change Password' and not yield(:title) == 'Resend Confirmation Instructions' %>
 	<%= render 'layouts/footer' %>
 
 	<div id="copywrite">
@@ -44,9 +47,11 @@
 		</div>	  
       </div>	  
     </div>
-
+	<% end %>
+	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="/assets/jquery-1.8.3.min.js"><\/script>')</script>
+    <script src="/assets/rails.js"></script>
     <script src="/assets/bootstrap.min.js"></script>
 	<script src="/assets/jquery.fitvids.js"></script>
 	<script src="/assets/jqBootstrapValidation.js"></script>

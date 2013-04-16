@@ -1,0 +1,54 @@
+<% provide(:title, 'Register') %>
+	<div id="content">
+	  <div class="container">
+	    <div class="row">
+		  <div class="span12">
+		    <div class="well well-form txt-lefty">
+              <h3>Sign Up</h3>
+              <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		        <div class="control-group">
+		          <div class="controls">
+				    <%= f.text_field :first_name, { :placeholder => "First Name", :class => "span3", :required => true } %>
+				  </div>
+			    </div>
+		        <div class="control-group">
+		          <div class="controls">
+					<%= f.text_field :last_name, { :placeholder => "Last Name", :class => "span3", :required => true } %>
+				  </div>
+			    </div>
+		        <div class="control-group">
+		          <div class="controls">
+				    <%= f.email_field :email, { :placeholder => "Email", :class => "span3", :required => true } %>
+				  </div>
+			    </div>
+		        <div class="control-group">
+		          <div class="controls">
+			        <%= f.password_field :password, { :placeholder => "Password", :class => "span3", :required => true } %>
+				  </div>
+			    </div>
+		        <div class="control-group">
+		          <div class="controls">
+				    <%= f.password_field :password_confirmation, { :placeholder => "Confirm Password", :class => "span3", :required => true, :'data-validation-matches-match' => "user[password]",  :'data-validation-matches-message' => "Must match password entered above" } %>
+				  </div>
+			    </div>
+                <div class="form-actions">
+			      <label class="checkbox">
+                    <input type="checkbox" name="terms" required  data-validation-required-message="You must agree to the terms and conditions">
+                    I agree to the terms and conditions
+                  </label>
+			      <button class="btn btn-primary" type="submit">Sign Up</button>
+			    </div>
+                <% end %>
+		      <div class="form-extra">
+			    <button class="btn btn-info"><i class="glyphicons-twitter"></i> Login with Twitter</button>
+			    <button class="btn btn-danger"><i class="glyphicons-google_plus"></i> Login with Google</button>
+			  </div>
+			    <br>
+				<div>
+		          <%= render "devise/shared/links" %>
+				</div> 			  
+            </div>
+		  </div>  
+		</div>  	
+	  </div>
+	</div>
