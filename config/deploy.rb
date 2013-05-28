@@ -13,6 +13,14 @@ set :deploy_via, :remote_cache
 ssh_options[:keys] = ["#{ENV['HOME']}/tongec2key.pem"]
 #default_run_options[:pty] = true
 
+set :default_environment, {
+  'PATH' => "/home/ec2-user/.rvm/gems/ruby-1.9.3-p194@rails3/bin:/home/ec2-user/.rvm/gems/ruby-1.9.3-p194@global/bin:/home/ec2-user/.rvm/rubies/ruby-1.9.3-p194/bin:/home/ec2-user/.rvm/bin:/usr/lib/jvm/jre/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/home/ec2-user/bin",
+  'RUBY_VERSION' => 'ruby 1.9.3',
+  'GEM_HOME'     => '/home/ec2-user/.rvm/gems/ruby-1.9.3-p194@rails3',
+  'GEM_PATH'     => '/home/ec2-user/.rvm/gems/ruby-1.9.3-p194@rails3:/home/ec2-user/.rvm/gems/ruby-1.9.3-p194@global',
+  'BUNDLE_PATH'  => '/home/ec2-user/.rvm/gems/ruby-1.9.3-p194@rails3'
+}
+
 role :web, "107.20.207.230"                          # Your HTTP server, Apache/etc
 role :app, "107.20.207.230"
 
