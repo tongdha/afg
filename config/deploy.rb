@@ -30,7 +30,7 @@ role :app, "107.20.207.230"
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
 
-after "deploy", "deploy:bundle_gems"
+after "deploy", "deploy:bundle_gems", "deploy:migrate"
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do

@@ -64,4 +64,25 @@ Afg::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  
+  # Add the fonts path
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  
+  # Precompile additional assets
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
+
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.smtp_settings = {
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => "mail.google.com",
+  :user_name => "tom4111@gmail.com",
+  :password => "1mimi168899",
+  :authentication => :plain
+  }
+  
 end
