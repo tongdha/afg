@@ -7,7 +7,7 @@ do
    let count-=1
 done
 
-cd /home/ec2-user
+cd /var/www/afg/current
 while [ $count -gt 0 ]
 do
    ./runafg.sh
