@@ -1,0 +1,1 @@
+* * * * * ec2-user /var/www/afg/current/monafg.sh 1 | /usr/bin/logger -t monafg
