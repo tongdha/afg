@@ -39,6 +39,7 @@ namespace :deploy do
   end
   task :precompile_assets do
     run "cd #{deploy_to}/current && bundle exec rake assets:precompile"
+    run "cd #{deploy_to}/current/public && ln -s assets fonts"
   end
 #   task :start do ; end
 #   task :stop do ; end
