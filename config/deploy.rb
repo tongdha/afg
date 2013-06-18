@@ -30,12 +30,15 @@ role :app, "affiliateraise.com"
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
 
-after "deploy", "deploy:bundle_gems", "deploy:migrate"
+after "deploy", "deploy:bundle_gems", "deploy:precompile_assets", "deploy:migrate"
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :bundle_gems do
     run "cd #{deploy_to}/current && bundle install --path vendor/gems"
+  end
+  task :precompile_assets do
+    run "cd #{deploy_to}/current && bundle exec rake assets:precompile"
   end
 #   task :start do ; end
 #   task :stop do ; end
