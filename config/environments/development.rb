@@ -51,7 +51,7 @@ Afg::Application.configure do
   :port => 587,
   :domain => "mail.google.com",
   :user_name => "tom4111@gmail.com",
-  :password => "1mimi168899",
+  :password => "Mimi168899",
   :authentication => :plain
   }
   

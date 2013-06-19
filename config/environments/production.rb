@@ -75,13 +75,13 @@ Afg::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'affiliateraise.com' }
   config.action_mailer.smtp_settings = {
   :address => "smtp.gmail.com",
   :port => 587,
   :domain => "mail.google.com",
   :user_name => "tom4111@gmail.com",
-  :password => "1mimi168899",
+  :password => "Mimi168899",
   :authentication => :plain
   }
   
